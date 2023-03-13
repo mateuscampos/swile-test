@@ -2,7 +2,7 @@
 //  TransactionAmount.swift
 //  SwileTest
 //
-//  Created by guru on 11/03/23.
+//  Created by Mateus de Campos on 11/03/23.
 //
 
 import Foundation
