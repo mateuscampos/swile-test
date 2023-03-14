@@ -21,6 +21,12 @@
 		CA52B12029BD5E9E008345E0 /* TransactionIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52B11F29BD5E9E008345E0 /* TransactionIcon.swift */; };
 		CA52B12229BD5EBA008345E0 /* TransactionAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52B12129BD5EBA008345E0 /* TransactionAmount.swift */; };
 		CA52B12429BD5EF1008345E0 /* TransactionCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52B12329BD5EF1008345E0 /* TransactionCurrency.swift */; };
+		CA52B12829BF9312008345E0 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52B12729BF9312008345E0 /* TransactionListView.swift */; };
+		CA52B12A29BFB09D008345E0 /* TransactionListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52B12929BFB09D008345E0 /* TransactionListRow.swift */; };
+		CA52B12E29C01DB5008345E0 /* String+ValueOrEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52B12D29C01DB5008345E0 /* String+ValueOrEmpty.swift */; };
+		CA52B13229C021EF008345E0 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52B13129C021EF008345E0 /* Spacing.swift */; };
+		CA52B13429C025BC008345E0 /* String+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52B13329C025BC008345E0 /* String+DateFormatter.swift */; };
+		CA52B13629C029FF008345E0 /* Double+NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52B13529C029FF008345E0 /* Double+NumberFormatter.swift */; };
 		CADE074A29BB9D9900E1044A /* SwileTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074929BB9D9900E1044A /* SwileTestApp.swift */; };
 		CADE074C29BB9D9900E1044A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074B29BB9D9900E1044A /* ContentView.swift */; };
 		CADE074E29BB9D9B00E1044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADE074D29BB9D9B00E1044A /* Assets.xcassets */; };
@@ -62,6 +68,12 @@
 		CA52B11F29BD5E9E008345E0 /* TransactionIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionIcon.swift; sourceTree = "<group>"; };
 		CA52B12129BD5EBA008345E0 /* TransactionAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAmount.swift; sourceTree = "<group>"; };
 		CA52B12329BD5EF1008345E0 /* TransactionCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCurrency.swift; sourceTree = "<group>"; };
+		CA52B12729BF9312008345E0 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		CA52B12929BFB09D008345E0 /* TransactionListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRow.swift; sourceTree = "<group>"; };
+		CA52B12D29C01DB5008345E0 /* String+ValueOrEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValueOrEmpty.swift"; sourceTree = "<group>"; };
+		CA52B13129C021EF008345E0 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		CA52B13329C025BC008345E0 /* String+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateFormatter.swift"; sourceTree = "<group>"; };
+		CA52B13529C029FF008345E0 /* Double+NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+NumberFormatter.swift"; sourceTree = "<group>"; };
 		CADE074629BB9D9900E1044A /* SwileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADE074929BB9D9900E1044A /* SwileTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwileTestApp.swift; sourceTree = "<group>"; };
 		CADE074B29BB9D9900E1044A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 		CA52B11229BBB256008345E0 /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
+				CA52B12629BF92F1008345E0 /* Views */,
 				CA52B11629BBD0BE008345E0 /* ViewModel */,
 				CA52B11329BBB26A008345E0 /* Models */,
 			);
@@ -166,6 +179,41 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CA52B12629BF92F1008345E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA52B12729BF9312008345E0 /* TransactionListView.swift */,
+				CA52B12929BFB09D008345E0 /* TransactionListRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CA52B12B29C01D80008345E0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CA52B12C29C01D8B008345E0 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CA52B12C29C01D8B008345E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA52B12D29C01DB5008345E0 /* String+ValueOrEmpty.swift */,
+				CA52B13329C025BC008345E0 /* String+DateFormatter.swift */,
+				CA52B13529C029FF008345E0 /* Double+NumberFormatter.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CA52B12F29C021D5008345E0 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				CA52B13129C021EF008345E0 /* Spacing.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		CADE073D29BB9D9900E1044A = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +237,8 @@
 		CADE074829BB9D9900E1044A /* SwileTest */ = {
 			isa = PBXGroup;
 			children = (
+				CA52B12F29C021D5008345E0 /* DesignSystem */,
+				CA52B12B29C01D80008345E0 /* Helpers */,
 				CA52B11129BBB24B008345E0 /* Features */,
 				CA52B0FE29BBA023008345E0 /* Network */,
 				CADE074929BB9D9900E1044A /* SwileTestApp.swift */,
@@ -358,8 +408,11 @@
 				CA52B12229BD5EBA008345E0 /* TransactionAmount.swift in Sources */,
 				CADE074C29BB9D9900E1044A /* ContentView.swift in Sources */,
 				CA52B10029BBA0B4008345E0 /* NetworkService.swift in Sources */,
+				CA52B12E29C01DB5008345E0 /* String+ValueOrEmpty.swift in Sources */,
+				CA52B13229C021EF008345E0 /* Spacing.swift in Sources */,
 				CADE074A29BB9D9900E1044A /* SwileTestApp.swift in Sources */,
 				CA52B11029BBB225008345E0 /* Service.swift in Sources */,
+				CA52B12829BF9312008345E0 /* TransactionListView.swift in Sources */,
 				CA52B10D29BBB1AE008345E0 /* ServiceProtocol.swift in Sources */,
 				CA52B12429BD5EF1008345E0 /* TransactionCurrency.swift in Sources */,
 				CA52B11829BBD541008345E0 /* TransactionListViewModel.swift in Sources */,
@@ -367,6 +420,9 @@
 				CA52B11A29BD59E3008345E0 /* Endpoints.swift in Sources */,
 				CA52B11529BBCD4C008345E0 /* TransactionListResponseModel.swift in Sources */,
 				CA52B11C29BD5E5D008345E0 /* Transaction.swift in Sources */,
+				CA52B13629C029FF008345E0 /* Double+NumberFormatter.swift in Sources */,
+				CA52B13429C025BC008345E0 /* String+DateFormatter.swift in Sources */,
+				CA52B12A29BFB09D008345E0 /* TransactionListRow.swift in Sources */,
 				CA52B12029BD5E9E008345E0 /* TransactionIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

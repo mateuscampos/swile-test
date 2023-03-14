@@ -7,7 +7,9 @@
 
 import Foundation
 
-class TransactionListViewModel {
+class TransactionListViewModel: ObservableObject {
+
+    @Published var transactions: [Transaction] = []
     
     func fetch() {
         let transactionListService = Service<TransactionListResponseModel>(url: Endpoint.transactionList.url(),
@@ -15,10 +17,17 @@ class TransactionListViewModel {
             switch result {
             case .success(let responseModel):
                 print("Transactions: \(responseModel.transactions)")
+                self.transactions = responseModel.transactions
             case .failure(let error):
                 print("Error fetching transactions: \(error.localizedDescription)")
             }
         }
         transactionListService.start()
+    }
+}
+
+extension TransactionListViewModel {
+    static func preview() -> TransactionListViewModel {
+        return TransactionListViewModel()
     }
 }

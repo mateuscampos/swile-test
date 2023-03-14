@@ -39,9 +39,9 @@ class Service<T: Decodable>: ServiceProtocol {
             case .success(let data):
                 do {
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
-                    self.completion?(.success(decodedData))
+                    DispatchQueue.main.async { self.completion?(.success(decodedData)) }
                 } catch let error {
-                    self.completion?(.failure(error))
+                    DispatchQueue.main.async { self.completion?(.failure(error)) }
                 }
             case .failure(let error):
                 self.completion?(.failure(error))
