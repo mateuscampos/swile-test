@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    
+
     var fromServerTo_dMMM: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -22,5 +22,17 @@ extension String {
         }
 
         return dateFormatter.string(from: unwpdDate)
+    }
+
+    var fromServerToDate: Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+
+        guard let date = dateFormatter.date(from: self) else {
+            return Date()
+        }
+
+        return date
     }
 }

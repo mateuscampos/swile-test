@@ -14,8 +14,8 @@ struct Transaction: Codable, Identifiable {
     let date: String
     let message: String?
     let amount: TransactionAmount
-    let smallIcon: TransactionIcon?
-    let largeIcon: TransactionIcon?
+    let smallIcon: TransactionSmallIcon
+    let largeIcon: TransactionLargeIcon
 
     private enum CodingKeys: String, CodingKey {
         case name
@@ -39,7 +39,7 @@ struct Transaction: Codable, Identifiable {
     }
 
     var hasLargeIconUrl: Bool {
-        return ((largeIcon?.url) != nil) ? true : false
+        return ((largeIcon.url) != nil) ? true : false
     }
 
     var largeIconSize: Double {
@@ -57,9 +57,9 @@ extension Transaction {
                                                      currency: TransactionCurrency(iso3: "EUR",
                                                                                    symbol: "€",
                                                                                    title: "Euro")),
-                           smallIcon: TransactionIcon(url: nil,
-                                                      category: "meal_voucher"),
-                           largeIcon: TransactionIcon(url: URL(string: "https://res.cloudinary.com/hbnjrwllw/image/upload/v1583240999/neobank/charity/cdaa7851-da33-4b3c-8e01-228c4b085ac3.png"),
-                                                      category: "donation"))
+                           smallIcon: TransactionSmallIcon(url: nil,
+                                                           category: .mealVoucher),
+                           largeIcon: TransactionLargeIcon(url: URL(string: "https://res.cloudinary.com/hbnjrwllw/image/upload/v1583240999/neobank/charity/cdaa7851-da33-4b3c-8e01-228c4b085ac3.png"),
+                                                           category: .donation))
     }
 }

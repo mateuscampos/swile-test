@@ -19,29 +19,32 @@ struct TransactionListRow: View {
         HStack {
             ZStack {
                 VStack {
-                    ImageView(imageName: "icon_sushi", url: transaction.largeIcon?.url)
-                        .frame(width: transaction.largeIconSize, height: transaction.largeIconSize)
+                    ImageView(imageName: transaction.largeIcon.category.imageName(),
+                              url: transaction.largeIcon.url)
+                    .frame(width: transaction.largeIconSize, height: transaction.largeIconSize)
                 }
                 .frame(width: 56, height: 56)
+                .background(Color(transaction.largeIcon.category.illustrationColor()))
                 .cornerRadius(26)
                 .overlay(
                     RoundedRectangle(cornerRadius: 26)
-                        .stroke(Color(UIColor(red: 0, green: 0, blue: 0, alpha: 0.06)),
+                        .stroke(Color(.borderGray),
                                 lineWidth: 1)
                 )
-                
-                    
-                ImageView(imageName: "", url: transaction.smallIcon?.url)
-                    .background(Color(.white))
-                    .frame(width: 16, height: 16)
-                    .cornerRadius(8)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color(UIColor(red: 1, green: 1, blue: 1, alpha: 1)),
-                                    lineWidth: 3)
-                    )
-                    .offset(x: 21, y: 21)
-                    
+                VStack {
+                    ImageView(imageName: transaction.smallIcon.category.imageName(),
+                              url: transaction.smallIcon.url)
+                    .frame(width: 12, height: 12)
+                }
+                .frame(width: 16, height: 16)
+                .background(Color(.background))
+                .cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color(.borderWhite),
+                                lineWidth: 3)
+                )
+                .offset(x: 21, y: 21)
             }
             .padding(.trailing, Spacing.medium)
             VStack(alignment: .leading, spacing: Spacing.extraSmall) {
