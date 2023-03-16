@@ -35,7 +35,7 @@ struct Transaction: Codable, Identifiable {
     }
 
     var amountWithCurrency: String {
-        return "\(amount.value.localizedValue) \(amount.currency.symbol)"
+        return "\(isPositive ? "+" : "")\(amount.value.localizedValue) \(amount.currency.symbol)"
     }
 
     var hasLargeIconUrl: Bool {
@@ -44,6 +44,10 @@ struct Transaction: Codable, Identifiable {
 
     var largeIconSize: Double {
         return hasLargeIconUrl ? 56 : 28
+    }
+
+    var isPositive: Bool {
+        return self.amount.value > 0
     }
 }
 

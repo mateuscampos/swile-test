@@ -28,6 +28,7 @@ struct TransactionListRow: View {
                 .cornerRadius(26)
                 .overlay(
                     RoundedRectangle(cornerRadius: 26)
+                        .inset(by: 1)
                         .stroke(Color(.borderGray),
                                 lineWidth: 1)
                 )
@@ -50,10 +51,26 @@ struct TransactionListRow: View {
             VStack(alignment: .leading, spacing: Spacing.extraSmall) {
                 HStack {
                     Text(transaction.name)
+                        .font(Font(UIFont.largeMedium))
+                        .foregroundColor(Color(UIColor.titleText))
                     Spacer()
-                    Text(transaction.amountWithCurrency)
+                    if transaction.isPositive {
+                        Text(transaction.amountWithCurrency)
+                            .font(Font(UIFont.largeMedium))
+                            .foregroundColor(Color(.highlightText))
+                            .padding(.horizontal, Spacing.small)
+                            .padding(.vertical, Spacing.extraSmall)
+                            .background(Color(.highlightBackground))
+                            .cornerRadius(9)
+                    } else {
+                        Text(transaction.amountWithCurrency)
+                            .font(Font(UIFont.largeMedium))
+                            .foregroundColor(Color(UIColor.titleText))
+                    }
                 }
                 Text(transaction.description)
+                    .font(Font(UIFont.smallDefault))
+                    .foregroundColor(Color(UIColor.subtitleText))
             }
         }
     }

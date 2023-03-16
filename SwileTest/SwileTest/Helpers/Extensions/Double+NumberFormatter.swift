@@ -12,9 +12,14 @@ extension Double {
         let formatter = NumberFormatter()
         formatter.locale = Locale(identifier: "fr_FR")
         formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 2
-        formatter.minimumFractionDigits = 2
-        formatter.decimalSeparator = ","
+        if self == self.rounded() {
+            formatter.minimumFractionDigits = 0
+            formatter.maximumFractionDigits = 0
+        } else {
+            formatter.minimumFractionDigits = 2
+            formatter.maximumFractionDigits = 2
+            formatter.decimalSeparator = ","
+        }
         if let localizedString = formatter.string(for: self) {
             return localizedString
         }

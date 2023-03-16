@@ -12,6 +12,8 @@ struct TransactionListView: View {
     @ObservedObject var viewModel: TransactionListViewModel
 
     public init(viewModel: TransactionListViewModel) {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.heading1,
+                                                                 .foregroundColor: UIColor.headingText]
         self.viewModel = viewModel
     }
 
@@ -19,12 +21,16 @@ struct TransactionListView: View {
         NavigationStack {
             List {
                 ForEach(viewModel.transactionsGroupedByMonth) { group in
-                    Section(group.monthName) {
+                    Section {
                         ForEach(group.transactions) { transaction in
                             TransactionListRow(transaction: transaction)
                                 .listRowSeparator(.hidden)
                         }
                         .listRowBackground(Color(.background))
+                    } header: {
+                        Text(group.monthName)
+                            .font(Font(UIFont.defaultMedium))
+                            .foregroundColor(Color(UIColor.sectionText))
                     }
                     .textCase(nil)
                 }
@@ -42,6 +48,9 @@ struct TransactionListView: View {
             Button("Ok") {
                 viewModel.alertHandler()
             }
+        })
+        .sheet(isPresented: $viewModel.showErrorAlert, content: {
+            Text("HelloWorld")
         })
         .onAppear(perform: viewModel.fetch)
     }

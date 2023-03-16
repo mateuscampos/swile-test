@@ -43,4 +43,45 @@ extension UIColor {
     static var illustrationRed: UIColor {
         return UIColor(red: 0.996, green: 0.878, blue: 0.882, alpha: 1)
     }
+
+    static var highlightBackground: UIColor {
+        return UIColor(red: 0.902, green: 0.878, blue: 0.973, alpha: 1)
+    }
+
+    static var highlightText: UIColor {
+        return UIColor(red: 0.388, green: 0.247, blue: 0.827, alpha: 1)
+    }
+
+    static var subtitleText: UIColor {
+        UIColor { traitCollection -> UIColor in
+            if traitCollection.userInterfaceStyle == .dark {
+                return UIColor(red: 0.905, green: 0.894, blue: 0.949, alpha: 1)
+            } else {
+                return UIColor(red: 0.569, green: 0.545, blue: 0.651, alpha: 1)
+            }
+        }
+    }
+
+    static var titleText: UIColor {
+        UIColor { traitCollection -> UIColor in
+            if traitCollection.userInterfaceStyle == .dark {
+                return UIColor(red: 0.925, green: 0.914, blue: 0.969, alpha: 1)
+            } else {
+                return UIColor(red: 0.114, green: 0.067, blue: 0.282, alpha: 1)
+            }
+        }
+    }
+
+    static var headingText: UIColor {
+        return titleText
+    }
+
+    static var actionHighlightText: UIColor {
+        return highlightText
+    }
+
+    static var sectionText: UIColor {
+        return subtitleText
+    }
+
 }

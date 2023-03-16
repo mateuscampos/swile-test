@@ -31,8 +31,13 @@
 		CACBC23029C107C000BB154E /* TransactionLargeIconCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC22F29C107C000BB154E /* TransactionLargeIconCategory.swift */; };
 		CACBC23229C108E100BB154E /* TransactionLargeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC23129C108E100BB154E /* TransactionLargeIcon.swift */; };
 		CACBC23629C1647700BB154E /* TransactionMonthGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC23529C1647700BB154E /* TransactionMonthGroup.swift */; };
-		CACBC23829C167F400BB154E /* DateFormatter+Iso8601Full.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC23729C167F400BB154E /* DateFormatter+Iso8601Full.swift */; };
 		CACBC23A29C1970D00BB154E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC23929C1970D00BB154E /* Colors.swift */; };
+		CACBC23D29C2690B00BB154E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CACBC23C29C2690B00BB154E /* Montserrat-Medium.ttf */; };
+		CACBC23F29C2693200BB154E /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CACBC23E29C2693200BB154E /* Montserrat-SemiBold.ttf */; };
+		CACBC24129C2694500BB154E /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CACBC24029C2694500BB154E /* Montserrat-Bold.ttf */; };
+		CACBC24529C2C4BA00BB154E /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC24429C2C4BA00BB154E /* FontName.swift */; };
+		CACBC24729C2C4FC00BB154E /* FontFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC24629C2C4FC00BB154E /* FontFamily.swift */; };
+		CACBC24929C2C59400BB154E /* SemanticFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC24829C2C59300BB154E /* SemanticFont.swift */; };
 		CADE074A29BB9D9900E1044A /* SwileTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074929BB9D9900E1044A /* SwileTestApp.swift */; };
 		CADE074C29BB9D9900E1044A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074B29BB9D9900E1044A /* ContentView.swift */; };
 		CADE074E29BB9D9B00E1044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADE074D29BB9D9B00E1044A /* Assets.xcassets */; };
@@ -84,8 +89,14 @@
 		CACBC22F29C107C000BB154E /* TransactionLargeIconCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLargeIconCategory.swift; sourceTree = "<group>"; };
 		CACBC23129C108E100BB154E /* TransactionLargeIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLargeIcon.swift; sourceTree = "<group>"; };
 		CACBC23529C1647700BB154E /* TransactionMonthGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionMonthGroup.swift; sourceTree = "<group>"; };
-		CACBC23729C167F400BB154E /* DateFormatter+Iso8601Full.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Iso8601Full.swift"; sourceTree = "<group>"; };
 		CACBC23929C1970D00BB154E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CACBC23C29C2690B00BB154E /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		CACBC23E29C2693200BB154E /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		CACBC24029C2694500BB154E /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		CACBC24229C2C43500BB154E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CACBC24429C2C4BA00BB154E /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
+		CACBC24629C2C4FC00BB154E /* FontFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamily.swift; sourceTree = "<group>"; };
+		CACBC24829C2C59300BB154E /* SemanticFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticFont.swift; sourceTree = "<group>"; };
 		CADE074629BB9D9900E1044A /* SwileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADE074929BB9D9900E1044A /* SwileTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwileTestApp.swift; sourceTree = "<group>"; };
 		CADE074B29BB9D9900E1044A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,6 +166,7 @@
 		CA52B11129BBB24B008345E0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CACBC24A29C2E67900BB154E /* TransactionDetail */,
 				CA52B11229BBB256008345E0 /* TransactionList */,
 			);
 			path = Features;
@@ -218,7 +230,6 @@
 				CA52B12D29C01DB5008345E0 /* String+ValueOrEmpty.swift */,
 				CA52B13329C025BC008345E0 /* String+DateFormatter.swift */,
 				CA52B13529C029FF008345E0 /* Double+NumberFormatter.swift */,
-				CACBC23729C167F400BB154E /* DateFormatter+Iso8601Full.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,10 +237,39 @@
 		CA52B12F29C021D5008345E0 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				CACBC23B29C2689500BB154E /* Resources */,
 				CA52B13129C021EF008345E0 /* Spacing.swift */,
 				CACBC23929C1970D00BB154E /* Colors.swift */,
+				CACBC24429C2C4BA00BB154E /* FontName.swift */,
+				CACBC24629C2C4FC00BB154E /* FontFamily.swift */,
+				CACBC24829C2C59300BB154E /* SemanticFont.swift */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		CACBC23B29C2689500BB154E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CACBC23C29C2690B00BB154E /* Montserrat-Medium.ttf */,
+				CACBC23E29C2693200BB154E /* Montserrat-SemiBold.ttf */,
+				CACBC24029C2694500BB154E /* Montserrat-Bold.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CACBC24A29C2E67900BB154E /* TransactionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CACBC24B29C2F90F00BB154E /* Views */,
+			);
+			path = TransactionDetail;
+			sourceTree = "<group>";
+		};
+		CACBC24B29C2F90F00BB154E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CADE073D29BB9D9900E1044A = {
@@ -255,6 +295,7 @@
 		CADE074829BB9D9900E1044A /* SwileTest */ = {
 			isa = PBXGroup;
 			children = (
+				CACBC24229C2C43500BB154E /* Info.plist */,
 				CA52B12F29C021D5008345E0 /* DesignSystem */,
 				CA52B12B29C01D80008345E0 /* Helpers */,
 				CA52B11129BBB24B008345E0 /* Features */,
@@ -397,7 +438,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACBC24129C2694500BB154E /* Montserrat-Bold.ttf in Resources */,
 				CADE075129BB9D9B00E1044A /* Preview Assets.xcassets in Resources */,
+				CACBC23D29C2690B00BB154E /* Montserrat-Medium.ttf in Resources */,
+				CACBC23F29C2693200BB154E /* Montserrat-SemiBold.ttf in Resources */,
 				CADE074E29BB9D9B00E1044A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,11 +468,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA52B12229BD5EBA008345E0 /* TransactionAmount.swift in Sources */,
+				CACBC24529C2C4BA00BB154E /* FontName.swift in Sources */,
 				CADE074C29BB9D9900E1044A /* ContentView.swift in Sources */,
 				CA52B10029BBA0B4008345E0 /* NetworkService.swift in Sources */,
 				CA52B12E29C01DB5008345E0 /* String+ValueOrEmpty.swift in Sources */,
 				CA52B13229C021EF008345E0 /* Spacing.swift in Sources */,
+				CACBC24729C2C4FC00BB154E /* FontFamily.swift in Sources */,
 				CADE074A29BB9D9900E1044A /* SwileTestApp.swift in Sources */,
+				CACBC24929C2C59400BB154E /* SemanticFont.swift in Sources */,
 				CACBC23A29C1970D00BB154E /* Colors.swift in Sources */,
 				CA52B11029BBB225008345E0 /* Service.swift in Sources */,
 				CA52B12829BF9312008345E0 /* TransactionListView.swift in Sources */,
@@ -444,7 +491,6 @@
 				CA52B11C29BD5E5D008345E0 /* Transaction.swift in Sources */,
 				CA52B13629C029FF008345E0 /* Double+NumberFormatter.swift in Sources */,
 				CA52B13429C025BC008345E0 /* String+DateFormatter.swift in Sources */,
-				CACBC23829C167F400BB154E /* DateFormatter+Iso8601Full.swift in Sources */,
 				CACBC23229C108E100BB154E /* TransactionLargeIcon.swift in Sources */,
 				CA52B12A29BFB09D008345E0 /* TransactionListRow.swift in Sources */,
 				CA52B12029BD5E9E008345E0 /* TransactionSmallIcon.swift in Sources */,
@@ -612,6 +658,7 @@
 				DEVELOPMENT_TEAM = 7H2AHWG667;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwileTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -641,6 +688,7 @@
 				DEVELOPMENT_TEAM = 7H2AHWG667;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwileTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
