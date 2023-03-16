@@ -11,7 +11,7 @@ import SwiftUI
 struct SwileTestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TransactionListView(viewModel: TransactionListViewModel())
         }
     }
 }
