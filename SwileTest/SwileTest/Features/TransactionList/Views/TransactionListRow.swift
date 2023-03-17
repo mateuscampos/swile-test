@@ -76,33 +76,6 @@ struct TransactionListRow: View {
     }
 }
 
-struct ImageView: View {
-
-    var url: URL?
-    var imageName: String
-
-    init(imageName: String, url: URL? = nil) {
-        self.imageName = imageName
-        self.url = url
-    }
-
-    var body: some View {
-        if let url = self.url {
-            AsyncImage(url: url) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            } placeholder: {
-                ProgressView()
-            }
-        } else {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        }
-    }
-}
-
 struct TransactionListRow_Previews: PreviewProvider {
     static var previews: some View {
         TransactionListRow(transaction: Transaction.preview())

@@ -25,7 +25,6 @@ struct TransactionListView: View {
                         ForEach(group.transactions) { transaction in
                             TransactionListRow(transaction: transaction)
                                 .listRowSeparator(.hidden)
-                                .scaleEffect(viewModel.isSelectedTransactionTheCurrentTransaction(transaction) ? 10 : 1)
                                 .onTapGesture {
                                     viewModel.selectedTransaction = transaction
                                     viewModel.showDetail = true

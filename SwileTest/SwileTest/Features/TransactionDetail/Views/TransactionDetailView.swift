@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TransactionDetailView: View {
 
+    @State private var isAnimating = false
+
     @Environment(\.dismiss) var dismiss
     let screenWidth = UIScreen.main.bounds.width
     let headerAspectRatio: CGFloat = 375 / 224
@@ -29,53 +31,84 @@ struct TransactionDetailView: View {
 
     var body: some View {
         VStack(spacing: Spacing.extraLarge) {
-            GeometryReader { geometry in
-                ZStack {
-                    VStack {
-                        ImageView(imageName: transaction.largeIcon.category.imageName(),
-                                  url: transaction.largeIcon.url)
-                        .frame(width: transaction.headerIconSize, height: transaction.headerIconSize)
-                    }
-                    VStack {
-                        ImageView(imageName: transaction.smallIcon.category.imageName(),
-                                  url: transaction.smallIcon.url)
-                        .frame(width: 18, height: 18)
-                    }
+            if isAnimating {
+                header()
+                    .transition(.scale)
+                infoSection()
+                    .transition(.move(edge: .bottom))
+                actionsSection()
+                    .transition(.move(edge: .bottom))
+            }
+            Spacer()
+        }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                isAnimating = true
+            }
+        }
+    }
+
+    @ViewBuilder
+    func header() -> some View {
+        GeometryReader { geometry in
+            ZStack {
+                VStack {
+                    ImageView(imageName: transaction.largeIcon.category.imageName(),
+                              url: transaction.largeIcon.url)
+                    .frame(width: transaction.headerIconSize, height: transaction.headerIconSize)
+                }
+                VStack {
+                    ImageView(imageName: transaction.smallIcon.category.imageName(),
+                              url: transaction.smallIcon.url)
+                    .frame(width: 18, height: 18)
+                }
+                .frame(width: 24, height: 24)
+                .background(Color(.background))
+                .cornerRadius(12)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color(.borderWhite),
+                                lineWidth: 3)
+                )
+                .offset(x: screenWidth/2 - 32,
+                        y: (geometry.size.height/2))
+                ImageView(imageName: "chevron", url: nil)
                     .frame(width: 24, height: 24)
-                    .background(Color(.background))
-                    .cornerRadius(12)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color(.borderWhite),
-                                    lineWidth: 3)
-                    )
-                    .offset(x: screenWidth/2 - 32,
-                            y: (geometry.size.height/2))
-                    ImageView(imageName: "chevron", url: nil)
-                        .frame(width: 24, height: 24)
-                        .position(x: 24, y: 24)
-                        .onTapGesture {
+                    .position(x: 24, y: 24)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            isAnimating = false
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             dismiss()
                         }
-                }
+                    }
             }
-            .frame(width: screenWidth, height: screenWidth/headerAspectRatio)
-            .background(Color(transaction.largeIcon.category.illustrationColor()))
+        }
+        .frame(width: screenWidth, height: screenWidth/headerAspectRatio)
+        .background(Color(transaction.largeIcon.category.illustrationColor()))
+    }
 
-            VStack(spacing: Spacing.medium) {
-                VStack(spacing: Spacing.small) {
-                    Text(transaction.amountWithCurrency)
-                        .font(Font(UIFont.heading1))
-                        .foregroundColor(Color(.titleText))
-                    Text(transaction.name)
-                        .font(Font(UIFont.defaultStrong))
-                        .foregroundColor(Color(.titleText))
-                }
-                Text(transaction.formattedDate.capitalizedSentence)
-                    .font(Font(UIFont.defaultMedium))
-                    .foregroundColor(Color(.subtitleText))
+    @ViewBuilder
+    func infoSection() -> some View {
+        VStack(spacing: Spacing.medium) {
+            VStack(spacing: Spacing.small) {
+                Text(transaction.amountWithCurrency)
+                    .font(Font(UIFont.heading1))
+                    .foregroundColor(Color(.titleText))
+                Text(transaction.name)
+                    .font(Font(UIFont.defaultStrong))
+                    .foregroundColor(Color(.titleText))
             }
+            Text(transaction.formattedDate.capitalizedSentence)
+                .font(Font(UIFont.defaultMedium))
+                .foregroundColor(Color(.subtitleText))
+        }
+    }
 
+    @ViewBuilder
+    func actionsSection() -> some View {
+        VStack {
             List {
                 Section {
                     ForEach(quickActions) { action in
@@ -83,7 +116,7 @@ struct TransactionDetailView: View {
                             VStack {
                                 ImageView(imageName: action.imageName(),
                                           url: action == .changeAccount("", .clear) ? transaction.smallIcon.url : nil)
-                                    .frame(width: 16, height: 16)
+                                .frame(width: 16, height: 16)
                             }
                             .frame(width: 32, height: 32)
                             .background(Color(action.iconBackgroundColor()))
@@ -119,11 +152,6 @@ struct TransactionDetailView: View {
             .scrollContentBackground(.hidden)
             .background(Color(.background))
             .padding(.top, -Spacing.extraLarge)
-            .onAppear {
-                UITableView.appearance().isScrollEnabled = false
-            }
-
-            Spacer()
         }
     }
 }

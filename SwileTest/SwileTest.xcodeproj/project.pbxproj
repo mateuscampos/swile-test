@@ -41,6 +41,7 @@
 		CACBC24F29C2FC5A00BB154E /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC24E29C2FC5A00BB154E /* TransactionDetailView.swift */; };
 		CACBC25129C30F8800BB154E /* String+Capitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25029C30F8800BB154E /* String+Capitalized.swift */; };
 		CACBC25429C3122300BB154E /* TransactionQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25329C3122300BB154E /* TransactionQuickActions.swift */; };
+		CACBC25729C47E8F00BB154E /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25629C47E8F00BB154E /* ImageView.swift */; };
 		CADE074A29BB9D9900E1044A /* SwileTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074929BB9D9900E1044A /* SwileTestApp.swift */; };
 		CADE074C29BB9D9900E1044A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074B29BB9D9900E1044A /* ContentView.swift */; };
 		CADE074E29BB9D9B00E1044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADE074D29BB9D9B00E1044A /* Assets.xcassets */; };
@@ -103,6 +104,7 @@
 		CACBC24E29C2FC5A00BB154E /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		CACBC25029C30F8800BB154E /* String+Capitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Capitalized.swift"; sourceTree = "<group>"; };
 		CACBC25329C3122300BB154E /* TransactionQuickActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionQuickActions.swift; sourceTree = "<group>"; };
+		CACBC25629C47E8F00BB154E /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		CADE074629BB9D9900E1044A /* SwileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADE074929BB9D9900E1044A /* SwileTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwileTestApp.swift; sourceTree = "<group>"; };
 		CADE074B29BB9D9900E1044A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		CA52B12F29C021D5008345E0 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				CACBC25529C47E0600BB154E /* Components */,
 				CACBC23B29C2689500BB154E /* Resources */,
 				CA52B13129C021EF008345E0 /* Spacing.swift */,
 				CACBC23929C1970D00BB154E /* Colors.swift */,
@@ -287,6 +290,14 @@
 				CACBC25329C3122300BB154E /* TransactionQuickActions.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CACBC25529C47E0600BB154E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CACBC25629C47E8F00BB154E /* ImageView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		CADE073D29BB9D9900E1044A = {
@@ -486,6 +497,7 @@
 			files = (
 				CA52B12229BD5EBA008345E0 /* TransactionAmount.swift in Sources */,
 				CACBC24529C2C4BA00BB154E /* FontName.swift in Sources */,
+				CACBC25729C47E8F00BB154E /* ImageView.swift in Sources */,
 				CADE074C29BB9D9900E1044A /* ContentView.swift in Sources */,
 				CA52B10029BBA0B4008345E0 /* NetworkService.swift in Sources */,
 				CA52B12E29C01DB5008345E0 /* String+ValueOrEmpty.swift in Sources */,
