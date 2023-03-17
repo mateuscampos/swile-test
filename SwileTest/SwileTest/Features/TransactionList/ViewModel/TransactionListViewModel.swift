@@ -11,8 +11,6 @@ class TransactionListViewModel: ObservableObject {
 
     @Published var transactionsGroupedByMonth: [TransactionMonthGroup] = []
     @Published var showErrorAlert: Bool = false
-    @Published var showDetail: Bool = false
-    var selectedTransaction: Transaction?
 
     func fetch() {
         let transactionListService = Service<TransactionListResponseModel>(url: Endpoint.transactionList.url(),
@@ -71,12 +69,6 @@ class TransactionListViewModel: ObservableObject {
         self.showErrorAlert = false
     }
 
-    func isSelectedTransactionTheCurrentTransaction(_ currentTransaction: Transaction) -> Bool {
-        guard let selected = self.selectedTransaction else {
-            return false
-        }
-        return selected.id == currentTransaction.id
-    }
 }
 
 extension TransactionListViewModel {
