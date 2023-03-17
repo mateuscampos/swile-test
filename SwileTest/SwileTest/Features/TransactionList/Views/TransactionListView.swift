@@ -25,6 +25,11 @@ struct TransactionListView: View {
                         ForEach(group.transactions) { transaction in
                             TransactionListRow(transaction: transaction)
                                 .listRowSeparator(.hidden)
+                                .scaleEffect(viewModel.isSelectedTransactionTheCurrentTransaction(transaction) ? 10 : 1)
+                                .onTapGesture {
+                                    viewModel.selectedTransaction = transaction
+                                    viewModel.showDetail = true
+                                }
                         }
                         .listRowBackground(Color(.background))
                     } header: {
@@ -49,8 +54,10 @@ struct TransactionListView: View {
                 viewModel.alertHandler()
             }
         })
-        .sheet(isPresented: $viewModel.showErrorAlert, content: {
-            Text("HelloWorld")
+        .fullScreenCover(isPresented: $viewModel.showDetail, content: {
+            if let transaction = viewModel.selectedTransaction {
+                TransactionDetailView(transaction: transaction)
+            }
         })
         .onAppear(perform: viewModel.fetch)
     }

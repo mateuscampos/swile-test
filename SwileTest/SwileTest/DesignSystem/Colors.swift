@@ -44,6 +44,10 @@ extension UIColor {
         return UIColor(red: 0.996, green: 0.878, blue: 0.882, alpha: 1)
     }
 
+    static var illustrationGray: UIColor {
+        return UIColor(red: 0.965, green: 0.965, blue: 0.973, alpha: 1)
+    }
+
     static var highlightBackground: UIColor {
         return UIColor(red: 0.902, green: 0.878, blue: 0.973, alpha: 1)
     }

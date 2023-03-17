@@ -38,6 +38,9 @@
 		CACBC24529C2C4BA00BB154E /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC24429C2C4BA00BB154E /* FontName.swift */; };
 		CACBC24729C2C4FC00BB154E /* FontFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC24629C2C4FC00BB154E /* FontFamily.swift */; };
 		CACBC24929C2C59400BB154E /* SemanticFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC24829C2C59300BB154E /* SemanticFont.swift */; };
+		CACBC24F29C2FC5A00BB154E /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC24E29C2FC5A00BB154E /* TransactionDetailView.swift */; };
+		CACBC25129C30F8800BB154E /* String+Capitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25029C30F8800BB154E /* String+Capitalized.swift */; };
+		CACBC25429C3122300BB154E /* TransactionQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25329C3122300BB154E /* TransactionQuickActions.swift */; };
 		CADE074A29BB9D9900E1044A /* SwileTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074929BB9D9900E1044A /* SwileTestApp.swift */; };
 		CADE074C29BB9D9900E1044A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074B29BB9D9900E1044A /* ContentView.swift */; };
 		CADE074E29BB9D9B00E1044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADE074D29BB9D9B00E1044A /* Assets.xcassets */; };
@@ -97,6 +100,9 @@
 		CACBC24429C2C4BA00BB154E /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
 		CACBC24629C2C4FC00BB154E /* FontFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamily.swift; sourceTree = "<group>"; };
 		CACBC24829C2C59300BB154E /* SemanticFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticFont.swift; sourceTree = "<group>"; };
+		CACBC24E29C2FC5A00BB154E /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		CACBC25029C30F8800BB154E /* String+Capitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Capitalized.swift"; sourceTree = "<group>"; };
+		CACBC25329C3122300BB154E /* TransactionQuickActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionQuickActions.swift; sourceTree = "<group>"; };
 		CADE074629BB9D9900E1044A /* SwileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADE074929BB9D9900E1044A /* SwileTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwileTestApp.swift; sourceTree = "<group>"; };
 		CADE074B29BB9D9900E1044A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 				CA52B12D29C01DB5008345E0 /* String+ValueOrEmpty.swift */,
 				CA52B13329C025BC008345E0 /* String+DateFormatter.swift */,
 				CA52B13529C029FF008345E0 /* Double+NumberFormatter.swift */,
+				CACBC25029C30F8800BB154E /* String+Capitalized.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +267,7 @@
 		CACBC24A29C2E67900BB154E /* TransactionDetail */ = {
 			isa = PBXGroup;
 			children = (
+				CACBC25229C311F300BB154E /* Models */,
 				CACBC24B29C2F90F00BB154E /* Views */,
 			);
 			path = TransactionDetail;
@@ -268,8 +276,17 @@
 		CACBC24B29C2F90F00BB154E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CACBC24E29C2FC5A00BB154E /* TransactionDetailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CACBC25229C311F300BB154E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CACBC25329C3122300BB154E /* TransactionQuickActions.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CADE073D29BB9D9900E1044A = {
@@ -473,10 +490,12 @@
 				CA52B10029BBA0B4008345E0 /* NetworkService.swift in Sources */,
 				CA52B12E29C01DB5008345E0 /* String+ValueOrEmpty.swift in Sources */,
 				CA52B13229C021EF008345E0 /* Spacing.swift in Sources */,
+				CACBC25429C3122300BB154E /* TransactionQuickActions.swift in Sources */,
 				CACBC24729C2C4FC00BB154E /* FontFamily.swift in Sources */,
 				CADE074A29BB9D9900E1044A /* SwileTestApp.swift in Sources */,
 				CACBC24929C2C59400BB154E /* SemanticFont.swift in Sources */,
 				CACBC23A29C1970D00BB154E /* Colors.swift in Sources */,
+				CACBC24F29C2FC5A00BB154E /* TransactionDetailView.swift in Sources */,
 				CA52B11029BBB225008345E0 /* Service.swift in Sources */,
 				CA52B12829BF9312008345E0 /* TransactionListView.swift in Sources */,
 				CA52B10D29BBB1AE008345E0 /* ServiceProtocol.swift in Sources */,
@@ -484,6 +503,7 @@
 				CA52B11829BBD541008345E0 /* TransactionListViewModel.swift in Sources */,
 				CACBC22E29C1075D00BB154E /* TransactionSmallIconCategory.swift in Sources */,
 				CA52B11E29BD5E75008345E0 /* TransactionType.swift in Sources */,
+				CACBC25129C30F8800BB154E /* String+Capitalized.swift in Sources */,
 				CACBC23029C107C000BB154E /* TransactionLargeIconCategory.swift in Sources */,
 				CACBC23629C1647700BB154E /* TransactionMonthGroup.swift in Sources */,
 				CA52B11A29BD59E3008345E0 /* Endpoints.swift in Sources */,
