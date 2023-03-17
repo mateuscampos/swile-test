@@ -9,42 +9,60 @@ import SwiftUI
 
 struct TransactionDetailView: View {
 
-    @State private var isAnimating = false
+    @State private var isAnimatingInfo = false
+    @State private var isAnimatingAction = false
 
     @Environment(\.dismiss) var dismiss
-    let screenWidth = UIScreen.main.bounds.width
-    let headerAspectRatio: CGFloat = 375 / 224
+    var screenWidth = UIScreen.main.bounds.width
+    var headerAspectRatio: CGFloat = 375 / 224
     let quickActions: [TransactionQuickActions]
 
-    var transaction: Transaction
+    @Binding var selectedTransaction: Transaction
+    @Binding var show: Bool
+    var animation: Namespace.ID
 
-    init(transaction: Transaction) {
-        self.transaction = transaction
-        self.quickActions = [
-            .changeAccount(transaction.smallIcon.category.imageName(),
-                           transaction.largeIcon.category.illustrationColor()),
-            .accountShare,
-            .like,
-            .speakWithUs
-        ]
+    init(isAnimatingInfo: Bool = false,
+         isAnimatingAction: Bool = false,
+         screenWidth: CGFloat = UIScreen.main.bounds.width,
+         headerAspectRatio: CGFloat = 375 / 224,
+         quickActions: [TransactionQuickActions],
+         selectedTransaction: Binding<Transaction>,
+         show: Binding<Bool>,
+         animation: Namespace.ID) {
+        self._isAnimatingInfo = State(initialValue: isAnimatingInfo)
+        self._isAnimatingAction = State(initialValue: isAnimatingAction)
+        self.screenWidth = screenWidth
+        self.headerAspectRatio = headerAspectRatio
+        self.quickActions = quickActions
+        self._selectedTransaction = selectedTransaction
+        self._show = show
+        self.animation = animation
     }
 
     var body: some View {
         VStack(spacing: Spacing.extraLarge) {
-            if isAnimating {
-                header()
-                    .transition(.scale)
+            header()
+            if isAnimatingInfo {
                 infoSection()
-                    .transition(.move(edge: .bottom))
+                    .transition(AnyTransition.move(edge: .bottom).combined(with: AnyTransition.opacity))
+            }
+            if isAnimatingAction {
                 actionsSection()
-                    .transition(.move(edge: .bottom))
+                    .transition(AnyTransition.move(edge: .bottom).combined(with: AnyTransition.opacity))
             }
             Spacer()
         }
-        .onAppear {
-            withAnimation(.easeInOut(duration: 0.5)) {
-                isAnimating = true
+        .onAppear(perform: startAnimations)
+    }
+
+    func startAnimations() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation(.easeInOut(duration: 0.4)) {
+                isAnimatingInfo.toggle()
             }
+        }
+        withAnimation(.easeInOut(duration: 0.4).delay(1)) {
+            isAnimatingAction.toggle()
         }
     }
 
@@ -53,13 +71,13 @@ struct TransactionDetailView: View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
-                    ImageView(imageName: transaction.largeIcon.category.imageName(),
-                              url: transaction.largeIcon.url)
-                    .frame(width: transaction.headerIconSize, height: transaction.headerIconSize)
+                    ImageView(imageName: selectedTransaction.largeIcon.category.imageName(),
+                              url: selectedTransaction.largeIcon.url)
+                    .frame(width: selectedTransaction.headerIconSize, height: selectedTransaction.headerIconSize)
                 }
                 VStack {
-                    ImageView(imageName: transaction.smallIcon.category.imageName(),
-                              url: transaction.smallIcon.url)
+                    ImageView(imageName: selectedTransaction.smallIcon.category.imageName(),
+                              url: selectedTransaction.smallIcon.url)
                     .frame(width: 18, height: 18)
                 }
                 .frame(width: 24, height: 24)
@@ -77,30 +95,35 @@ struct TransactionDetailView: View {
                     .position(x: 24, y: 24)
                     .onTapGesture {
                         withAnimation(.easeInOut(duration: 0.5)) {
-                            isAnimating = false
+                            isAnimatingAction.toggle()
+                            isAnimatingInfo.toggle()
+                        }
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            show.toggle()
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             dismiss()
                         }
                     }
             }
+            .matchedGeometryEffect(id: selectedTransaction.id, in: animation)
         }
         .frame(width: screenWidth, height: screenWidth/headerAspectRatio)
-        .background(Color(transaction.largeIcon.category.illustrationColor()))
+        .background(Color(selectedTransaction.largeIcon.category.illustrationColor()))
     }
 
     @ViewBuilder
     func infoSection() -> some View {
         VStack(spacing: Spacing.medium) {
             VStack(spacing: Spacing.small) {
-                Text(transaction.amountWithCurrency)
+                Text(selectedTransaction.amountWithCurrency)
                     .font(Font(UIFont.heading1))
                     .foregroundColor(Color(.titleText))
-                Text(transaction.name)
+                Text(selectedTransaction.name)
                     .font(Font(UIFont.defaultStrong))
                     .foregroundColor(Color(.titleText))
             }
-            Text(transaction.formattedDate.capitalizedSentence)
+            Text(selectedTransaction.formattedDate.capitalizedSentence)
                 .font(Font(UIFont.defaultMedium))
                 .foregroundColor(Color(.subtitleText))
         }
@@ -115,7 +138,8 @@ struct TransactionDetailView: View {
                         HStack {
                             VStack {
                                 ImageView(imageName: action.imageName(),
-                                          url: action == .changeAccount("", .clear) ? transaction.smallIcon.url : nil)
+                                          url: action == .changeAccount("",
+                                            .clear) ? selectedTransaction.smallIcon.url : nil)
                                 .frame(width: 16, height: 16)
                             }
                             .frame(width: 32, height: 32)
@@ -157,7 +181,16 @@ struct TransactionDetailView: View {
 }
 
 struct TransactionDetailView_Previews: PreviewProvider {
+    @Namespace static var animation
     static var previews: some View {
-        TransactionDetailView(transaction: Transaction.preview())
+        TransactionDetailView(screenWidth:  UIScreen.main.bounds.width,
+                              headerAspectRatio: 375 / 224, quickActions: [
+                                .changeAccount("", .black),
+                                .accountShare,
+                                    .like,
+                                    .speakWithUs ],
+                              selectedTransaction: .constant(Transaction.preview()),
+                              show: .constant(false),
+                              animation: animation)
     }
 }

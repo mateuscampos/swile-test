@@ -10,52 +10,68 @@ import SwiftUI
 struct TransactionListView: View {
 
     @ObservedObject var viewModel: TransactionListViewModel
+    @State var selectedTransaction: Transaction
+    @Namespace var animation
+    @State var show = false
+    
 
     public init(viewModel: TransactionListViewModel) {
+        self.viewModel = viewModel
+        self._selectedTransaction = State(initialValue: Transaction.preview())
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.heading1,
                                                                  .foregroundColor: UIColor.headingText]
-        self.viewModel = viewModel
     }
 
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(viewModel.transactionsGroupedByMonth) { group in
-                    Section {
-                        ForEach(group.transactions) { transaction in
-                            TransactionListRow(transaction: transaction)
-                                .listRowSeparator(.hidden)
-                                .onTapGesture {
-                                    viewModel.selectedTransaction = transaction
-                                    viewModel.showDetail = true
-                                }
+        ZStack {
+            NavigationStack {
+                List {
+                    ForEach(viewModel.transactionsGroupedByMonth) { group in
+                        Section {
+                            ForEach(group.transactions) { transaction in
+                                TransactionListRow(transaction: transaction, animation: animation)
+                                    .listRowSeparator(.hidden)
+                                    .onTapGesture {
+                                        withAnimation(.easeInOut(duration: 0.5)) {
+                                            selectedTransaction = transaction
+                                            show.toggle()
+                                        }
+                                    }
+                            }
+                            .listRowBackground(Color(.background))
+                        } header: {
+                            Text(group.monthName)
+                                .font(Font(UIFont.defaultMedium))
+                                .foregroundColor(Color(UIColor.sectionText))
                         }
-                        .listRowBackground(Color(.background))
-                    } header: {
-                        Text(group.monthName)
-                            .font(Font(UIFont.defaultMedium))
-                            .foregroundColor(Color(UIColor.sectionText))
+                        .textCase(nil)
                     }
-                    .textCase(nil)
+                }
+                .navigationTitle("Titres-resto")
+                .listStyle(.grouped)
+                .scrollContentBackground(.hidden)
+                .background(Color(.background))
+                .refreshable {
+                    viewModel.fetch()
                 }
             }
-            .navigationTitle("Titres-resto")
-            .listStyle(.grouped)
-            .scrollContentBackground(.hidden)
-            .background(Color(.background))
-            .refreshable {
-                viewModel.fetch()
+            .opacity(show ? 0 : 1)
+
+            if show {
+                TransactionDetailView(quickActions: [.changeAccount(selectedTransaction.smallIcon.category.imageName(),
+                                                                    selectedTransaction.largeIcon.category.illustrationColor()),
+                                                     .accountShare,
+                                                     .like,
+                                                     .speakWithUs],
+                                      selectedTransaction: $selectedTransaction,
+                                      show: $show,
+                                      animation: animation)
             }
         }
         .alert(Text("Oups! Une erreur est survenue!"),
                isPresented: $viewModel.showErrorAlert, actions: {
             Button("Ok") {
                 viewModel.alertHandler()
-            }
-        })
-        .fullScreenCover(isPresented: $viewModel.showDetail, content: {
-            if let transaction = viewModel.selectedTransaction {
-                TransactionDetailView(transaction: transaction)
             }
         })
         .onAppear(perform: viewModel.fetch)

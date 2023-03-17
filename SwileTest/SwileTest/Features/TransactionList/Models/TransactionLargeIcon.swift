@@ -8,6 +8,6 @@
 import Foundation
 
 struct TransactionLargeIcon: Codable {
-    let url: URL?
-    let category: TransactionLargeIconCategory
+    var url: URL?
+    var category: TransactionLargeIconCategory
 }

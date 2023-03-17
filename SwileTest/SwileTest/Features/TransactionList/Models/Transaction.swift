@@ -14,8 +14,8 @@ struct Transaction: Codable, Identifiable {
     let date: String
     let message: String?
     let amount: TransactionAmount
-    let smallIcon: TransactionSmallIcon
-    let largeIcon: TransactionLargeIcon
+    var smallIcon: TransactionSmallIcon
+    var largeIcon: TransactionLargeIcon
 
     private enum CodingKeys: String, CodingKey {
         case name

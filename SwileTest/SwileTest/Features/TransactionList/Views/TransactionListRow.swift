@@ -10,10 +10,7 @@ import SwiftUI
 struct TransactionListRow: View {
 
     var transaction: Transaction
-
-    init(transaction: Transaction) {
-        self.transaction = transaction
-    }
+    var animation: Namespace.ID
 
     var body: some View {
         HStack {
@@ -47,6 +44,7 @@ struct TransactionListRow: View {
                 )
                 .offset(x: 21, y: 21)
             }
+            .matchedGeometryEffect(id: transaction.id, in: animation)
             .padding(.trailing, Spacing.medium)
             VStack(alignment: .leading, spacing: Spacing.extraSmall) {
                 HStack {
@@ -77,7 +75,8 @@ struct TransactionListRow: View {
 }
 
 struct TransactionListRow_Previews: PreviewProvider {
+    @Namespace static var namespace
     static var previews: some View {
-        TransactionListRow(transaction: Transaction.preview())
+        TransactionListRow(transaction: Transaction.preview(), animation: namespace)
     }
 }

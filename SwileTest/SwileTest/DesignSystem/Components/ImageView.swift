@@ -2,7 +2,7 @@
 //  ImageView.swift
 //  SwileTest
 //
-//  Created by guru on 17/03/23.
+//  Created by Mateus de Campos on 17/03/23.
 //
 
 import SwiftUI
