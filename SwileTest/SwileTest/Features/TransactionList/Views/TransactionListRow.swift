@@ -81,7 +81,7 @@ struct ImageView: View {
     var url: URL?
     var imageName: String
 
-    init(imageName: String, url: URL?) {
+    init(imageName: String, url: URL? = nil) {
         self.imageName = imageName
         self.url = url
     }

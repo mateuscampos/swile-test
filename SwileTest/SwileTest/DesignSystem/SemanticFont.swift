@@ -42,4 +42,11 @@ extension UIFont {
         }
         return font
     }
+
+    static var defaultStrong: UIFont {
+        guard let font = UIFont(name: FontName.monstserrat + "-" + FontFamily.semiBold, size: 13) else {
+            fatalError("could not load font")
+        }
+        return font
+    }
 }
