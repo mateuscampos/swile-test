@@ -42,11 +42,19 @@
 		CACBC25129C30F8800BB154E /* String+Capitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25029C30F8800BB154E /* String+Capitalized.swift */; };
 		CACBC25429C3122300BB154E /* TransactionQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25329C3122300BB154E /* TransactionQuickActions.swift */; };
 		CACBC25729C47E8F00BB154E /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25629C47E8F00BB154E /* ImageView.swift */; };
+		CACBC25A29C5344600BB154E /* TransactionListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25929C5344600BB154E /* TransactionListViewModelTests.swift */; };
+		CACBC25C29C53A0800BB154E /* TransactionLargeIconCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25B29C53A0800BB154E /* TransactionLargeIconCategoryTests.swift */; };
+		CACBC25E29C53CDB00BB154E /* TransactionSmallIconCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25D29C53CDB00BB154E /* TransactionSmallIconCategoryTests.swift */; };
+		CACBC26029C53DE700BB154E /* TransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC25F29C53DE700BB154E /* TransactionTests.swift */; };
+		CACBC26329C5450700BB154E /* TransactionQuickActionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC26229C5450700BB154E /* TransactionQuickActionsTests.swift */; };
+		CACBC26629C5478800BB154E /* String+CapitalizedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC26529C5478800BB154E /* String+CapitalizedTests.swift */; };
+		CACBC26829C5485900BB154E /* Double+NumberFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC26729C5485900BB154E /* Double+NumberFormatterTests.swift */; };
+		CACBC26A29C5492D00BB154E /* String+DateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC26929C5492D00BB154E /* String+DateFormatterTests.swift */; };
+		CACBC26C29C54A3D00BB154E /* String+ValueOrEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACBC26B29C54A3D00BB154E /* String+ValueOrEmptyTests.swift */; };
 		CADE074A29BB9D9900E1044A /* SwileTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074929BB9D9900E1044A /* SwileTestApp.swift */; };
 		CADE074C29BB9D9900E1044A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE074B29BB9D9900E1044A /* ContentView.swift */; };
 		CADE074E29BB9D9B00E1044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADE074D29BB9D9B00E1044A /* Assets.xcassets */; };
 		CADE075129BB9D9B00E1044A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADE075029BB9D9B00E1044A /* Preview Assets.xcassets */; };
-		CADE075B29BB9D9B00E1044A /* SwileTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE075A29BB9D9B00E1044A /* SwileTestTests.swift */; };
 		CADE076529BB9D9B00E1044A /* SwileTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE076429BB9D9B00E1044A /* SwileTestUITests.swift */; };
 		CADE076729BB9D9B00E1044A /* SwileTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE076629BB9D9B00E1044A /* SwileTestUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -105,13 +113,21 @@
 		CACBC25029C30F8800BB154E /* String+Capitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Capitalized.swift"; sourceTree = "<group>"; };
 		CACBC25329C3122300BB154E /* TransactionQuickActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionQuickActions.swift; sourceTree = "<group>"; };
 		CACBC25629C47E8F00BB154E /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		CACBC25929C5344600BB154E /* TransactionListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModelTests.swift; sourceTree = "<group>"; };
+		CACBC25B29C53A0800BB154E /* TransactionLargeIconCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLargeIconCategoryTests.swift; sourceTree = "<group>"; };
+		CACBC25D29C53CDB00BB154E /* TransactionSmallIconCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSmallIconCategoryTests.swift; sourceTree = "<group>"; };
+		CACBC25F29C53DE700BB154E /* TransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTests.swift; sourceTree = "<group>"; };
+		CACBC26229C5450700BB154E /* TransactionQuickActionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionQuickActionsTests.swift; sourceTree = "<group>"; };
+		CACBC26529C5478800BB154E /* String+CapitalizedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CapitalizedTests.swift"; sourceTree = "<group>"; };
+		CACBC26729C5485900BB154E /* Double+NumberFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+NumberFormatterTests.swift"; sourceTree = "<group>"; };
+		CACBC26929C5492D00BB154E /* String+DateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateFormatterTests.swift"; sourceTree = "<group>"; };
+		CACBC26B29C54A3D00BB154E /* String+ValueOrEmptyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValueOrEmptyTests.swift"; sourceTree = "<group>"; };
 		CADE074629BB9D9900E1044A /* SwileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADE074929BB9D9900E1044A /* SwileTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwileTestApp.swift; sourceTree = "<group>"; };
 		CADE074B29BB9D9900E1044A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CADE074D29BB9D9B00E1044A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CADE075029BB9D9B00E1044A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CADE075629BB9D9B00E1044A /* SwileTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwileTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CADE075A29BB9D9B00E1044A /* SwileTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwileTestTests.swift; sourceTree = "<group>"; };
 		CADE076029BB9D9B00E1044A /* SwileTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwileTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADE076429BB9D9B00E1044A /* SwileTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwileTestUITests.swift; sourceTree = "<group>"; };
 		CADE076629BB9D9B00E1044A /* SwileTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwileTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -300,6 +316,36 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		CACBC25829C5342100BB154E /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				CACBC25929C5344600BB154E /* TransactionListViewModelTests.swift */,
+				CACBC25B29C53A0800BB154E /* TransactionLargeIconCategoryTests.swift */,
+				CACBC25D29C53CDB00BB154E /* TransactionSmallIconCategoryTests.swift */,
+				CACBC25F29C53DE700BB154E /* TransactionTests.swift */,
+			);
+			path = TransactionList;
+			sourceTree = "<group>";
+		};
+		CACBC26129C5447300BB154E /* TransactionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CACBC26229C5450700BB154E /* TransactionQuickActionsTests.swift */,
+			);
+			path = TransactionDetail;
+			sourceTree = "<group>";
+		};
+		CACBC26429C5471E00BB154E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CACBC26529C5478800BB154E /* String+CapitalizedTests.swift */,
+				CACBC26729C5485900BB154E /* Double+NumberFormatterTests.swift */,
+				CACBC26929C5492D00BB154E /* String+DateFormatterTests.swift */,
+				CACBC26B29C54A3D00BB154E /* String+ValueOrEmptyTests.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CADE073D29BB9D9900E1044A = {
 			isa = PBXGroup;
 			children = (
@@ -347,8 +393,10 @@
 		CADE075929BB9D9B00E1044A /* SwileTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				CACBC26429C5471E00BB154E /* Helpers */,
+				CACBC26129C5447300BB154E /* TransactionDetail */,
+				CACBC25829C5342100BB154E /* TransactionList */,
 				CA52B10129BBA156008345E0 /* Network */,
-				CADE075A29BB9D9B00E1044A /* SwileTestTests.swift */,
 			);
 			path = SwileTestTests;
 			sourceTree = "<group>";
@@ -534,9 +582,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA52B10629BBA1B0008345E0 /* URLSessionMock.swift in Sources */,
+				CACBC25C29C53A0800BB154E /* TransactionLargeIconCategoryTests.swift in Sources */,
+				CACBC26A29C5492D00BB154E /* String+DateFormatterTests.swift in Sources */,
+				CACBC26C29C54A3D00BB154E /* String+ValueOrEmptyTests.swift in Sources */,
+				CACBC26029C53DE700BB154E /* TransactionTests.swift in Sources */,
 				CA52B10829BBA20B008345E0 /* URLSessionDataTaskMock.swift in Sources */,
+				CACBC25A29C5344600BB154E /* TransactionListViewModelTests.swift in Sources */,
+				CACBC25E29C53CDB00BB154E /* TransactionSmallIconCategoryTests.swift in Sources */,
+				CACBC26829C5485900BB154E /* Double+NumberFormatterTests.swift in Sources */,
 				CA52B10329BBA176008345E0 /* NetworkServiceTests.swift in Sources */,
-				CADE075B29BB9D9B00E1044A /* SwileTestTests.swift in Sources */,
+				CACBC26329C5450700BB154E /* TransactionQuickActionsTests.swift in Sources */,
+				CACBC26629C5478800BB154E /* String+CapitalizedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
