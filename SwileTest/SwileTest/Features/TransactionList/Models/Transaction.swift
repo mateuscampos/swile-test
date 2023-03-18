@@ -8,12 +8,12 @@
 import Foundation
 
 struct Transaction: Codable, Identifiable {
-    let id: UUID = UUID()
-    let name: String
-    let type: TransactionType
-    let date: String
-    let message: String?
-    let amount: TransactionAmount
+    var id: UUID = UUID()
+    var name: String
+    var type: TransactionType
+    var date: String
+    var message: String?
+    var amount: TransactionAmount
     var smallIcon: TransactionSmallIcon
     var largeIcon: TransactionLargeIcon
 
@@ -55,7 +55,7 @@ struct Transaction: Codable, Identifiable {
     }
 
     var isPositive: Bool {
-        return self.amount.value > 0
+        return self.amount.value >= 0
     }
 }
 
